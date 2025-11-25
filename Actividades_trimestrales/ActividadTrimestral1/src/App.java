@@ -18,19 +18,12 @@ public class App {
         // para facilitar la identificación y la depuración de la salida concurrente.
 
         Thread hiloPar1 = new Thread(par, "Par-1");
-        Thread hiloPar2 = new Thread(par, "Par-2");
-
-        // Reutilizamos la instancia 'impar' para crear DOS hilos independientes.
         Thread hiloImpar1 = new Thread(impar, "Impar-1");
-        Thread hiloImpar2 = new Thread(impar, "Impar-2");
 
 
         //Y ahora inicializamos cada hilo con el metodo start
         hiloPar1.start();
-        hiloPar2.start();
         hiloImpar1.start();
-        hiloImpar2.start();
-
 
 
     }
