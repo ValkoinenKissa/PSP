@@ -27,8 +27,8 @@ public class Impares extends Numero implements Runnable {
     }
 
     @Override
-    public void run() {
-        this.imprimirImpares();
+    public void run() { //Implementamos la función run que nos obliga a sobreescribir la interfaz
+        this.imprimirImpares(); //Ese run() es lo que el hilo ejecutará cuando lo arranquemos a través de un Thread.
 
     }
 }

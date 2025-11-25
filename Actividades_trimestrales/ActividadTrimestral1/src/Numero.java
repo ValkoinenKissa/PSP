@@ -10,6 +10,8 @@ public abstract class Numero {
         return valor;
     }
 
+    //Funciones comunes para heredar en las clases hijas
+
     public void imprimirPares() {}
 
     public void imprimirImpares() {}

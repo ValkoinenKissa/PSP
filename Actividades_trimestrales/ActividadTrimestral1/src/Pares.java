@@ -29,7 +29,7 @@ public class Pares extends Numero implements Runnable {
     }
 
     @Override
-    public void run() {
-        this.imprimirPares();
+    public void run() { //Implementamos la función run que nos obliga a sobreescribir la interfaz
+        this.imprimirPares(); //Ese run() es lo que el hilo ejecutará cuando lo arranquemos a través de un Thread.
     }
 }
