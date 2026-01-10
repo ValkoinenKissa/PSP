@@ -1,3 +1,5 @@
+package bebedero;
+
 import lombok.AllArgsConstructor;
 /*
 Crear una aplicación que permita controlar el bebedero de una perrera.

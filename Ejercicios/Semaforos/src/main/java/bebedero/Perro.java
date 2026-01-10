@@ -1,3 +1,5 @@
+package bebedero;
+
 import lombok.NoArgsConstructor;
 
 import java.util.Random;

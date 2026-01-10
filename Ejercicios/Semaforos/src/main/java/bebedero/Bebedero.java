@@ -1,3 +1,5 @@
+package bebedero;
+
 import lombok.Data;
 import lombok.NoArgsConstructor;
 

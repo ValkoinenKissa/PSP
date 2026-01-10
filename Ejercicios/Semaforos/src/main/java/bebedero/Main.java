@@ -1,3 +1,5 @@
+package bebedero;
+
 /*
 Crear una aplicación que permita controlar el bebedero de una perrera.
 Dicho bebedero solo pueden beber a la vez tres perros.
