@@ -9,7 +9,16 @@ Cuando el depósito llega a los 0 litros, el proceso de vaciado se para y se aum
 Simula con monitores dichos procesos y ve representando en pantalla las acciones que se van tomando.
  */
 public class Main {
-    public static void main(String [] args){
+    public static void main(String[] args) {
+
+        Deposito deposito = new Deposito();
+
+        Thread llenado = new Thread(new Llenado(deposito));
+        Thread vaciado = new Thread(new Vaciado(deposito));
+
+        llenado.start();
+        vaciado.start();
+
 
     }
 }
