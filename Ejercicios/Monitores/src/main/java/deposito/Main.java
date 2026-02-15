@@ -9,16 +9,34 @@ Cuando el depósito llega a los 0 litros, el proceso de vaciado se para y se aum
 Simula con monitores dichos procesos y ve representando en pantalla las acciones que se van tomando.
  */
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
         Deposito deposito = new Deposito();
 
-        Thread llenado = new Thread(new Llenado(deposito));
-        Thread vaciado = new Thread(new Vaciado(deposito));
+        // Ciclos suficientes para completar ~2 ciclos enteros del depósito
+        // Ciclo completo: 90(0→900) + 20(900→1000) + 90(1000→100) + 20(100→0) = 220 pasos aprox.
+        int ciclos = 500;
 
-        vaciado.start();
-        llenado.start();
+        System.out.println("══════════════════════════════════════════════════");
+        System.out.println("   SIMULACIÓN DE DEPÓSITO DE AGUA CON MONITORES");
+        System.out.println("══════════════════════════════════════════════════");
+        System.out.println("  Capacidad máxima: 1000 litros");
+        System.out.println("  Estado inicial:   0 litros, llenado a 10 L/s");
+        System.out.println("══════════════════════════════════════════════════\n");
 
+        HiloLlenado hiloLlenado = new HiloLlenado(deposito, ciclos);
+        HiloVaciado hiloVaciado = new HiloVaciado(deposito, ciclos);
+
+        hiloLlenado.start();
+        hiloVaciado.start();
+
+        hiloLlenado.join();
+        hiloVaciado.join();
+
+        System.out.println("\n══════════════════════════════════════════════════");
+        System.out.println("   SIMULACIÓN FINALIZADA");
+        System.out.printf("   Litros finales: %d%n", deposito.getLitros());
+        System.out.println("══════════════════════════════════════════════════");
 
     }
 }
