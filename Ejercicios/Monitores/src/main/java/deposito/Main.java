@@ -33,7 +33,7 @@ public class Main {
         hiloLlenado.join();
         hiloVaciado.join();
 
-        System.out.println("\n══════════════════════════════════════════════════");
+        System.out.println("══════════════════════════════════════════════════");
         System.out.println("   SIMULACIÓN FINALIZADA");
         System.out.printf("   Litros finales: %d%n", deposito.getLitros());
         System.out.println("══════════════════════════════════════════════════");
